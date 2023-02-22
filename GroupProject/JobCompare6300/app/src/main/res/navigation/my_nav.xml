@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/MainMenuFragment">
+
+    <fragment
+        android:id="@+id/MainMenuFragment"
+        android:name="edu.gatech.seclass.jobcompare6300.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/navigateToJobOfferFragment"
+            app:destination="@id/JobOfferFragment" />
+        <action
+            android:id="@+id/action_MainMenuFragment_to_currentJobFragment"
+            app:destination="@id/currentJobFragment" />
+        <action
+            android:id="@+id/action_MainMenuFragment_to_compareJobFragment"
+            app:destination="@id/compareJobFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/JobOfferFragment"
+        android:name="edu.gatech.seclass.jobcompare6300.JobOfferFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_joboffer" >
+        <action
+            android:id="@+id/navigateToMainMenuFragment"
+            app:destination="@id/MainMenuFragment" />
+        <action
+            android:id="@+id/navigateToVSCurrentFragment"
+            app:destination="@id/twoJobDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/currentJobFragment"
+        android:name="edu.gatech.seclass.jobcompare6300.CurrentJobFragment"
+        android:label="fragment_current_job"
+        tools:layout="@layout/fragment_current_job" >
+        <action
+            android:id="@+id/action_currentJobFragment_to_MainMenuFragment"
+            app:destination="@id/MainMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/compareJobFragment"
+        android:name="edu.gatech.seclass.jobcompare6300.compareJobFragment"
+        android:label="fragment_compare_job"
+        tools:layout="@layout/fragment_compare_job" >
+        <action
+            android:id="@+id/action_compareJobFragment_to_MainMenuFragment"
+            app:destination="@id/MainMenuFragment" />
+        <action
+            android:id="@+id/action_compareJobFragment_self"
+            app:destination="@id/compareJobFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/twoJobDetailFragment"
+        android:name="edu.gatech.seclass.jobcompare6300.twoJobDetailFragment"
+        android:label="fragment_two_job_detail"
+        tools:layout="@layout/fragment_two_job_detail" >
+        <action
+            android:id="@+id/twoJobDetailFragment_to_JobOfferFragment"
+            app:destination="@id/JobOfferFragment" />
+        <action
+            android:id="@+id/twoJobDetailFragment_to_MainMenuFragment"
+            app:destination="@id/MainMenuFragment" />
+    </fragment>
+</navigation>
